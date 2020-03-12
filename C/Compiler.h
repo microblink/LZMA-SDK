@@ -15,6 +15,7 @@
 
   #if _MSC_VER >= 1300
     #pragma warning(disable : 4996) // This function or variable may be unsafe
+    #pragma warning(disable : 4456) // declaration of 'identifier' hides previous local declaration
   #else
     #pragma warning(disable : 4511) // copy constructor could not be generated
     #pragma warning(disable : 4512) // assignment operator could not be generated

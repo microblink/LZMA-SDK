@@ -908,6 +908,10 @@ static UInt32 ReadMatchDistances(CLzmaEnc *p, UInt32 *numDistancePairsRes)
 #define MakeAsShortRep(p) (p)->backPrev = 0; (p)->prev1IsChar = False;
 #define IsShortRep(p) ((p)->backPrev == 0)
 
+#ifdef __clang__
+#pragma clang diagnostic ignored "-Wparentheses-equality"
+#endif
+
 static UInt32 GetRepLen1Price(CLzmaEnc *p, UInt32 state, UInt32 posState)
 {
   return

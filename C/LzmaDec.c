@@ -136,8 +136,10 @@ Out:
     = kMatchSpecLenStart + 1 : Flush marker (unused now)
     = kMatchSpecLenStart + 2 : State Init Marker (unused now)
 */
-
 static int MY_FAST_CALL LzmaDec_DecodeReal(CLzmaDec *p, SizeT limit, const Byte *bufLimit)
+#if defined( __clang__ )
+__attribute__((no_sanitize("unsigned-integer-overflow")))
+#endif
 {
   CLzmaProb *probs = p->probs;
 
